@@ -69,7 +69,7 @@ class CurlMax < Formula
       --disable-debug
       --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
+      --prefix=taki-kun-#{prefix}
     ]
 
     # cURL has a new firm desire to find ssl with PKG_CONFIG_PATH instead of using
