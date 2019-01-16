@@ -1,4 +1,4 @@
-class CurlOpenssl11 < Formula
+class CurlMax < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
   url "https://curl.haxx.se/download/curl-7.63.0.tar.bz2"
@@ -50,13 +50,14 @@ class CurlOpenssl11 < Formula
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional
-  depends_on "nghttp2" => :optional
+  depends_on "nghttp2" => :recommended
   depends_on "rtmpdump" => :optional
-  depends_on "libidn2" => :optional
-  depends_on "brotli"
-  depends_on "openldap"
-  depends_on "libev"
-  depends_on "jansson"
+  depends_on "libidn2" => :recommended
+  # depends_on "krb5"
+  # depends_on "brotli" => :recommended
+  # depends_on "openldap"
+  # depends_on "libev"
+  # depends_on "jansson"
 
   def install
     system "./buildconf" if build.head?
@@ -92,9 +93,10 @@ class CurlOpenssl11 < Formula
 
     args << (build.with?("libssh2") ? "--with-libssh2" : "--without-libssh2")
     args << (build.with?("libmetalink") ? "--with-libmetalink" : "--without-libmetalink")
-    args << (build.with?("gssapi") ? "--with-gssapi" : "--without-gssapi")
     args << (build.with?("rtmpdump") ? "--with-librtmp" : "--without-librtmp")
     args << (build.with?("libidn2") ? "--with-libidn2" : "--without-libidn2")
+    args << (build.with?("gssapi") ? "--with-gssapi" : "--without-gssapi")
+    # args << (build.with?("spnego") ? "--with-spnego" : "--without-spnego")
 
     if build.with? "c-ares"
       args << "--enable-ares=#{Formula["c-ares"].opt_prefix}"
