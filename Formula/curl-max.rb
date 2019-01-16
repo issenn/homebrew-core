@@ -50,9 +50,9 @@ class CurlMax < Formula
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional
-  depends_on "nghttp2" => :recommended
+  depends_on "nghttp2" => :optional
   depends_on "rtmpdump" => :optional
-  depends_on "libidn2" => :recommended
+  depends_on "libidn2" => :optional
   # depends_on "krb5"
   # depends_on "brotli" => :recommended
   # depends_on "openldap"
