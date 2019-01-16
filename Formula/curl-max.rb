@@ -36,7 +36,7 @@ class CurlMax < Formula
 
   # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
   # which is currently not supported by Secure Transport (DarwinSSL).
-  if MacOS.version < :mountain_lion || build.with?("nghttp2")
+  if MacOS.version < :mountain_lion  # || build.with?("nghttp2")
     depends_on "openssl"
   else
     option "with-openssl@1.1", "Build with OpenSSL 1.1 instead of Secure Transport"
