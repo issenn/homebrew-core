@@ -7,5 +7,6 @@ class Rimg2sdat < Formula
   
     def install
       bin.install "rimg2sdat.py"
+      mv bin/"rimg2sdat.py", bin/"rimg2sdat"
     end
   end

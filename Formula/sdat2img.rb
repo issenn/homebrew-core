@@ -7,5 +7,6 @@ class Sdat2img < Formula
   
     def install
       bin.install "sdat2img.py"
+      mv bin/"sdat2img.py", bin/"sdat2img"
     end
   end
