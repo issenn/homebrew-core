@@ -1,9 +1,8 @@
 class CurlMax < Formula
-  desc "Get a file from an HTTP, HTTPS or FTP server"
+  desc "Feature-maximised version of cURL, using OpenSSL 1.1"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.63.0.tar.bz2"
-  mirror "http://curl.mirror.anstey.ca/curl-7.63.0.tar.bz2"
-  sha256 "9bab7ed4ecff77020a312d84cc5fb7eb02d58419d218f267477a724a17fd8dd8"
+  url "https://curl.haxx.se/download/curl-7.64.1.tar.bz2"
+  sha256 "4cc7c738b35250d0680f29e93e0820c4cb40035f43514ea3ec8d60322d41a45d"
 
   bottle do
     cellar :any
@@ -14,10 +13,6 @@ class CurlMax < Formula
 
   head do
     url "https://github.com/curl/curl.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
   end
 
   keg_only :provided_by_macos
@@ -36,7 +31,7 @@ class CurlMax < Formula
 
   # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
   # which is currently not supported by Secure Transport (DarwinSSL).
-  if MacOS.version < :mountain_lion  # || build.with?("nghttp2")
+  if MacOS.version < :mountain_lion # || build.with?("nghttp2")
     depends_on "openssl"
   else
     option "with-openssl@1.1", "Build with OpenSSL 1.1 instead of Secure Transport"
@@ -45,19 +40,26 @@ class CurlMax < Formula
     depends_on "openssl" => :optional
   end
 
-  depends_on "pkg-config" => :build
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "cunit" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
+
+  depends_on "brotli" => :recommended
   depends_on "c-ares" => :optional
+  depends_on "libidn" => :optional
+  depends_on "libidn2" => :optional
   depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional
   depends_on "nghttp2" => :optional
   depends_on "rtmpdump" => :optional
-  depends_on "libidn2" => :optional
-  # depends_on "krb5"
-  # depends_on "brotli" => :recommended
-  # depends_on "openldap"
-  # depends_on "libev"
-  # depends_on "jansson"
+
+  # depends on "krb5"
+  # depends on "brotli" => :recommended
+  # depends on "openldap"
+  # depends on "libev"
+  # depends on "jansson"
 
   def install
     system "./buildconf" if build.head?
