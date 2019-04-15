@@ -2,7 +2,7 @@ class Fernflower < Formula
   desc "First actually working analytical decompiler for Java"
   homepage "https://github.com/fesh0r/fernflower"
   url "https://github.com/fesh0r/fernflower.git", :using => :git
-  version "0.0.1"
+  version "0.1.0"
 
   depends_on :java => "1.7+"
 
