@@ -61,4 +61,4 @@ see their feature page.
 ### sdat2img
 
 ## License
-See [LICENSE](./LICENSE) for a copy of the GPL v2 License.
+See [LICENSE](./LICENSE) for a copy of the BSD 2 Clause License.
