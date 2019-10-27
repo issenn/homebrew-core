@@ -9,6 +9,9 @@ Various often experimental or unstable cryptographic-related formulae.
 The normal homebrew tap and install routine will work
 Just `brew tap issenn/homebrew-core` and then `brew install <formula>`.
 
+    $ brew tap colinstein/imgcat
+    $ brew install imgcat
+
 You can also install via URL:
 
 ```
