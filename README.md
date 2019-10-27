@@ -28,11 +28,6 @@ My [fork](https://github.com/schwa/class-dump) (forked from Steve Nygard's [orig
 
 Unfortately class-dump broken on Mac OS X 10.11 and was subsequently moved to homebrew's boneyard. This fork fixes 10.11 compatibility (see [this issue](https://github.com/nygard/class-dump/pull/58)) and may include other outstanding pull requests from Steves original repository.
 
-Troubleshooting:
---------------------------------
-
-If you encounter any errors, feel free to file an issue. A `brew gist-logs <formula>` is often handy. Thanks!
-
 ### curl-max
 
 ### imgcat
@@ -59,6 +54,11 @@ see their feature page.
 ### rimg2sdat
 
 ### sdat2img
+
+Troubleshooting:
+--------------------------------
+
+If you encounter any errors, feel free to file an issue. A `brew gist-logs <formula>` is often handy. Thanks!
 
 ## License
 See [LICENSE](./LICENSE) for a copy of the BSD 2 Clause License.
