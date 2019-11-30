@@ -4,7 +4,7 @@ class BaidupcsGo < Formula
 
   url "https://github.com/iikira/BaiduPCS-Go/releases/download/v3.6.1/BaiduPCS-Go-v3.6.1-darwin-osx-amd64.zip"
   version "3.6.1"
-  sha256 "db087e64d606639ca3e05a4b482174a06d3c0eabd6cbdbcc317374fc40742a96"
+  sha256 "bb5989cdeaeea721932eee97fbadc721c8c1500f0916157c619eac80f235ae35"
 
   head do
     url "https://github.com/iikira/BaiduPCS-Go.git", :using => :git, :branch => 'master'
