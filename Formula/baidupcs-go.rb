@@ -41,7 +41,7 @@ class BaidupcsGo < Formula
     # system bin/"baidupcs-go", "run", "touch", "test.txt"
     # assert_predicate testpath/"test.txt", :exist?
     output = shell_output("#{bin}/BaiduPCS-Go --version 2>&1")
-    assert_match "BaiduPCS-Go version #{version}-devel", output
+    assert_match "BaiduPCS-Go version v#{version}-devel", output
     system "#{bin}/baidupcs", "--version"
     system "BaiduPCS-Go", "--version"
     system "baidupcs", "--version"
