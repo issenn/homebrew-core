@@ -25,6 +25,7 @@ class BaidupcsGo < Formula
   depends_on "go" => :build
 
   def install
+    ENV["GO111MODULE"] = "off"
     ENV["GOPATH"] = buildpath
     (buildpath/"src/github.com/iikira").mkpath
     ln_s buildpath, buildpath/"src/github.com/iikira/BaiduPCS-Go"
