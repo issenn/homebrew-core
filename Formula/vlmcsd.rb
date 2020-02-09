@@ -24,6 +24,7 @@ class Vlmcsd < Formula
     # man1.install "man/vlmcsdmulti.1"
     (etc/"vlmcsd").mkpath
     etc.install "etc/vlmcsd.ini" => "vlmcsd/vlmcsd.ini"
+    etc.install "etc/vlmcsd.kmd" => "vlmcsd/vlmcsd.kmd"
   end
 
   test do
