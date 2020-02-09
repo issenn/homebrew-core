@@ -22,6 +22,8 @@ class Vlmcsd < Formula
     man5.install "man/vlmcsd.ini.5"
     # man7.install "man/vlmcsd-floppy.7"
     # man1.install "man/vlmcsdmulti.1"
+    (etc/"vlmcsd").mkpath
+    etc.install "etc/vlmcsd.ini" => "vlmcsd/vlmcsd.ini"
   end
 
   test do
